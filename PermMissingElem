@@ -1,0 +1,34 @@
+<!-- Find the missing integer in a series or the next integer in line -->
+ 
+ const A = [2, 1, 4, 3]
+
+  function solution(A) {
+
+    if (!A.length) return 1
+
+    const n = A.length + 1
+    const arraySum = A.reduce((a, b) => a + b)
+    const seriesSum = (n * (1 + n)) / 2
+
+    return seriesSum - arraySum
+  }
+
+
+<!-- Calc all integers in the series: -->
+
+1,2,3,4,5
+
+(5 * (1 + 5)) / 2
+
+<!-- Calc ?incompelete series: -->
+
+[1,2,3,4]
+
+n = array.length + 1
+(n *(1 + n)) /2
+
+<!-- .reduce() A -->
+
+A.reduce((a,b) => a+b)
+
+<!-- compare -->

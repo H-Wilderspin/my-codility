@@ -1,0 +1,25 @@
+<!-- [A] contains pairs of integers with one exception, find the exception -->
+
+const A = [ 9,3,9,3,9,7,9] 
+answer = 7
+
+function solution(A) {
+  const mySet = new Set()
+
+  for ( const i of A ){
+    if (mySet.has(i)) {
+      mySet.delete(i)
+    } else {
+      mySet.add(i)
+    }
+  }
+
+  return mySet[0]
+}
+
+<!-- 
+Establish a set and terate through the array 
+- If i is already in the set then skip that i and delete that i from the set
+- If not, add i to the set
+- At the end of the iteration the set should ontain one int, return it
+-->

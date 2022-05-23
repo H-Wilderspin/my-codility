@@ -1,0 +1,56 @@
+<!-- Analogy / metaphor is bullshit. It hinders more than helps.
+
+A:
+
+0 
+1
+0
+1
+1
+
+for every 0 count the 1's that follow it:
+
+0
+1 x
+0 
+1 x x 
+1 x x
+
+= 5
+
+Write an algorithm that does this. Pref O(n)
+ -->
+
+function solution(A) {
+   
+    let count = 0
+    let total = 0
+
+    for(let i = A.length - 1; i >= 0; i--){
+
+        if(A[i] === 1){
+            count++
+        }
+        else{
+            total = total + count
+        }
+        if(total > 1000000000){return -1}
+    }
+
+    return total
+
+}
+
+<!-- 
+Solution:
+
+- Take the length of the array - 1, 
+- Use it as the index as you iterate over the array backwards,
+- Decrementing it by 1 on each sweep. 
+
+if A[i] === 1, increment a counter
+if 0, add counter to total. 
+DO NOT reset the count, you need the cumulative total
+
+return total at the end of the loop
+ -->

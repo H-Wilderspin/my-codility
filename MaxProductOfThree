@@ -1,0 +1,20 @@
+<!--  
+ Find the greatest possible total from multiplying any 3 integers in an array:
+ -->
+ 
+  function solution(A) {
+
+    A.sort((a, b) => (a - b))
+
+    const x = A[A.length - 1] * A[A.length - 2] * A[A.length - 3]
+    const y = A[A.length - 1] * A[0] * A[1]
+
+    return x > y ? x : y
+  }
+
+<!-- 
+- sort array
+- multiply the highest three entries 
+- multiply the highest entry by the two lowest entries
+- compare these two integers, return the highest result
+-->

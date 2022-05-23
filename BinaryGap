@@ -1,0 +1,38 @@
+<!-- 
+Find the longest set of zeros in a binary sequence. 
+The sequence must be bookmarked by ones 
+
+i.e 10001 = 3
+-->
+
+  function solution(N) {
+
+    const binary = N.toString(2)
+
+    let counter = 0
+    let result = 0
+
+    for (const v of binary) {
+      const i = parseInt(v)
+
+      if (i === 0) {
+        counter++
+      }
+      else if (i === 1 && counter > result) {
+        result = counter
+        counter = 0
+      }
+      else if (i === 1) {
+        counter = 0
+      }
+    }
+    return result
+  }
+
+<!-- 
+- ensure input is integer
+- convert to binary
+- iterate through string
+- count zeros
+- when iterating onto a one submit count to result: if (current count > current result) 
+-->

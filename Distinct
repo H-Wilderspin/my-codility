@@ -1,0 +1,18 @@
+<!-- Calc the number of distinct values in an array -->
+
+A = [2,1,1,2,3,1]
+Answer = 3
+
+  function solution(A) {
+
+    const mySet = new Set()
+
+    for (const v of A) {
+      const i = parseInt(v)
+      mySet.add(i)
+    }
+
+    return mySet.size || 0
+  }
+
+<!-- Make a set... return its size, duh -->

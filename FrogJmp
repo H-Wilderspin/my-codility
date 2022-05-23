@@ -1,0 +1,18 @@
+<!-- Calc how many D's required to traverse space between X and Y -->
+
+ X = 10
+ Y = 85
+ D = 30
+ 
+function solution (X, Y, D) {
+
+  const liminal = Y - X
+  const jumps = Math.ceil(liminal/D)
+  
+  return jumps
+}
+
+<!-- 
+Calc space between X and Y then divide that number by D.
+Round up to whole number 
+-->

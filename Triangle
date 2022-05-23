@@ -1,0 +1,29 @@
+<!-- Are there 3 lengths in this array that can be used to make a triangle ? 1 : 0 -->
+<!-- .sort() is permitted -->
+
+A = [10,2,5,1,8,20]
+
+function solution(A) {
+
+    if (A.length < 2) return 0
+
+    A = A.sort((a, b) => a - b)
+
+    for (let i = 0; i < A.length - 2; i++) {
+
+        if (
+            A[i] + A[i + 1] > A[i + 2]
+            &&
+            A[i + 1] + A[i + 2] > A[i]
+            &&
+            A[i] + A[i + 2] > A[i + 1]
+        ) {
+            return 1
+        }
+    }
+
+    return 0
+}
+
+<!-- Sort the array, if there are 3 ints that make up the lengths required to form a triangle they will be adjacent -->
+<!-- Iterate through the array taking i and its two neighbours for each test -->

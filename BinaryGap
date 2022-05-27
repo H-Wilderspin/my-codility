@@ -33,6 +33,6 @@ i.e 10001 = 3
 - ensure input is integer
 - convert to binary
 - iterate through string
-- count zeros
-- when iterating onto a one submit count to result: if (current count > current result) 
+- when iterating over a 0: count + 1
+- when iterating over a 1 save count as result: if (current count > current result) 
 -->

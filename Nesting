@@ -1,0 +1,19 @@
+function solution(S) {
+if (S.length === 0) return 1
+if (S.length % 2 === 1) return 0
+
+let holding = []
+
+for(const each of S){
+    switch(each) {
+        case '(':
+        holding.push(each)
+        break
+        case ')':
+        const x = holding.pop()
+        if (x === undefined) return 0    
+    }
+}
+
+return holding.length > 0 ? 0 : 1
+}

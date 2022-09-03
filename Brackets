@@ -1,0 +1,44 @@
+function solution(S) {
+
+const A = S.split("")
+
+let holding = []
+
+if(A.length % 2 === 1) return 0
+if(A.length === 0) return 1
+
+for (let each of A) {
+
+switch(each){
+
+case '{':
+case '[':
+case '(':
+holding.push(each)
+break 
+
+case ')':
+let x = holding.pop()
+if (x !== '(') {
+    return 0
+ } 
+break;
+
+case ']':
+let y = holding.pop()
+if (y !== '[') {
+    return 0
+ } 
+break;
+
+case '}':
+let z = holding.pop()
+if (z !== '{') {
+    return 0
+ } 
+break;
+
+}}
+
+ return 1
+}

@@ -1,0 +1,21 @@
+function solution(A) {
+
+  if (A.length === 0) return -1
+
+  let counter = []
+
+  for (let i = 0; i < A.length; i++) {
+    let current = A[i]
+
+    if (typeof counter[current] === "undefined")
+      counter[current] = 1
+      
+    else
+      counter[current]++
+      
+    if (counter[current] > A.length / 2)
+      return i
+
+  }
+  return -1
+}
